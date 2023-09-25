@@ -22,6 +22,9 @@ Route::delete('user',[AuthController::class,'delete']); //delete user
 Route::prefix('real-db')->group(function()
 {
     Route::post('/', [DatabaseController::class, 'store']);
+    Route::get('/', [DatabaseController::class, 'index']);
+    Route::put('/', [DatabaseController::class, 'update']);
+    Route::delete('/', [DatabaseController::class, 'delete']);
 });
 
 
